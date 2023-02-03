@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:newsapps/app/routes/app_pages.dart';
 import 'package:newsapps/styles/app_color.dart';
 import 'package:newsapps/styles/app_typo.dart';
@@ -18,22 +19,42 @@ class HomeView extends GetView<HomeController> {
           child: Scaffold(
               backgroundColor: Colors.white,
               appBar: AppBar(
-                backgroundColor: AppColor.secondaryColor,
-                title: Text('News', style: AppTypo.heading1),
+                elevation: 1,
+                toolbarHeight: Get.height * 0.03,
+                backgroundColor: Colors.white,
+                title: Padding(
+                  padding: const EdgeInsets.only(top: 12),
+                  child: Text('News',
+                      style: GoogleFonts.montserrat(
+                          fontSize: 16,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w600)),
+                ),
                 bottom: TabBar(
-                    labelPadding:
-                        const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
                     isScrollable: true,
-                    indicatorColor: Colors.white,
+                    indicatorColor: AppColor.disableColor,
+                    unselectedLabelColor: AppColor.disableColor,
                     indicatorSize: TabBarIndicatorSize.tab,
+                    padding: const EdgeInsets.symmetric(horizontal: 8),
+                    indicatorPadding: const EdgeInsets.only(bottom: 8),
+                    indicator: BoxDecoration(
+                        color: AppColor.primaryColor,
+                        borderRadius: BorderRadius.circular(25)),
                     tabs: controller.listCategori
-                        .map((e) => Tab(text: e))
+                        .map((e) => Tab(
+                              height: 32,
+                              child: Padding(
+                                  padding: const EdgeInsets.only(bottom: 6),
+                                  child: Text(e.toUpperCase(),
+                                      style: AppTypo.highlight3)),
+                            ))
                         .toList()),
               ),
               body: TabBarView(
                   children: controller.listCategori.map((kategori) {
                 return Padding(
-                  padding: const EdgeInsets.all(16),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
                   child: SingleChildScrollView(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,

@@ -6,5 +6,5 @@ class AppColor {
   static Color primaryColor = HexColor('DC0000');
   static Color secondaryColor = HexColor('850000');
   static Color accentColor = HexColor('FFDB89');
-  static Color disableColor = HexColor('EEEEEE');
+  static Color disableColor = HexColor('DDDDDD');
 }

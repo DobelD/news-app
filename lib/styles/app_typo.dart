@@ -13,7 +13,7 @@ class AppTypo {
   static TextStyle highlight2 =
       GoogleFonts.montserrat(fontSize: 14, fontWeight: FontWeight.w500);
   static TextStyle highlight3 =
-      GoogleFonts.montserrat(fontSize: 16, fontWeight: FontWeight.w500);
+      GoogleFonts.montserrat(fontSize: 12, fontWeight: FontWeight.w500);
   static TextStyle body =
       GoogleFonts.montserrat(fontSize: 14, fontWeight: FontWeight.w400);
   static TextStyle content =
