@@ -12,7 +12,6 @@ dependencies:
   google_fonts: ^4.0.1
   http: ^0.13.5
   flutter_webview_pro: 3.0.1+4
-  url_launcher: 6.1.8
   flutter: 
     sdk: flutter
 
